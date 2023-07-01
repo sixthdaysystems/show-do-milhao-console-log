@@ -157,7 +157,6 @@
 </head>
 
 <body>
-
     <main class="d-none">
         <section class="justify-content-center my-auto">
             <picture>
@@ -283,25 +282,29 @@
             <audio id="background-music" class="d-none" controls="false" loop>
                 <source src="https://memes.casa/audios/silvio-santos-abertura-show-do-milhao.mp3" type="audio/mp3">
             </audio>
-
         </section>
         <section id="person" class="align-items-center mx-auto">
             <img id="silvinho" class="d-flex img-fluid mh-100 mx-auto my-auto"
                 src="https://lh3.google.com/u/1/d/1Hd1JyXALgM6h4cgxyUdXsu0gW-wdNHG2=w960-h957-iv2" alt="Silvinho">
-            <div class="position-absolute bottom-0 end-0 h1 p-2 text-danger bg-dark rounded-start-circle border border-end-0 border-danger mb-0"
-                id="timer">99</div>
+            <div class="position-absolute bottom-0 end-0 h1 p-2 text-danger bg-dark border border-danger mb-0 d-block"
+                id="timer">99
+            </div>
+            <div onclick="location.reload()"
+                class="position-absolute bottom-0 end-0 h1 p-2 text-danger bg-dark border border-danger mb-0 d-none"
+                id="reload">REINICIAR
+            </div>
         </section>
     </main>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header text-bg-dark">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Show do Milhão - console.log</h1>
                 </div>
                 <div class="modal-body text-bg-dark">
-                    <p>Bem vindo(a),<br>são 3 perguntas e no final o resultado.</p>
+                    <p>Bem vindo(a), são 3 perguntas e no final o resultado.</p>
                     <p>Desenvolvido por Claudio Marques Programador.</p>
                     <div>
                         <label for="formFile" class="form-label">Enviar Foto</label>
@@ -521,6 +524,12 @@
                     document.querySelector("#answer20").classList.add("bg-success");
                 }, 2200);
             }
+            setTimeout(function () {
+                document.querySelector("#timer").classList.remove("d-block");
+                document.querySelector("#timer").classList.add("d-none");
+                document.querySelector("#reload").classList.remove("d-none");
+                document.querySelector("#reload").classList.add("d-flex");
+            }, 2000);
         };
 
         function readImage1() {
