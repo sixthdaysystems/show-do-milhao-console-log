@@ -59,6 +59,10 @@
         }
 
         @media screen and (orientation: portrait) {
+            main {
+                font-size: 3vh;
+            }
+
             section {
                 max-height: 50vh;
             }
@@ -68,21 +72,9 @@
             }
         }
 
-        @media screen and (orientation: portrait) and (min-width: 320px) {
-            main {
-                font-size: calc(0.9375rem + ((1vw - 3.2px) * 1.3393));
-                min-height: 0vw;
-            }
-        }
-
-        @media screen and (orientation: portrait) and (min-width: 768px) {
-            main {
-                font-size: 21px;
-            }
-        }
-
         @media screen and (orientation: landscape) {
             main {
+                font-size: 3.2vw;
                 flex-direction: row;
             }
 
@@ -92,19 +84,6 @@
 
             .tamanhologo {
                 width: 30vh;
-            }
-        }
-
-        @media screen and (orientation: landscape) and (min-width: 480px) {
-            main {
-                font-size: calc(0.9375rem + ((1vw - 4.8px) * 2));
-                min-height: 0vw;
-            }
-        }
-
-        @media screen and (orientation: landscape) and (min-width: 1980px) {
-            main {
-                font-size: 45px;
             }
         }
 
